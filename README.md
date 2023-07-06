@@ -7,7 +7,8 @@ This project utilize R to explore, analyze and visualize the "US College Ranking
 
 **DATA SOURCE**
 
-The "US College Rankings and Tuition Costs" dataset used in this project is sourced from Kaggle https://www.kaggle.com/. It provides information on various colleges, including their rankings, tuition fees, and enrollment numbers. The dataset can be accessed and downloaded from https://www.kaggle.com/datasets/dylankarmin/2022-college-rankings-compared-to-tuition-costs?select=2022+US+College+Rankings.csv
+The "US College Rankings and Tuition Costs" dataset used in this project is sourced from Kaggle https://www.kaggle.com/. 
+It provides information on various colleges, including their rankings, tuition fees, and enrollment numbers. The dataset can be accessed and downloaded from https://www.kaggle.com/datasets/dylankarmin/2022-college-rankings-compared-to-tuition-costs?select=2022+US+College+Rankings.csv
 
 Please refer to the data source for any specific data usage guidelines, licensing terms, or citation requirements.
 
