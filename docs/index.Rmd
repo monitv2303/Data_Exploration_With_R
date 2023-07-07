@@ -1,0 +1,104 @@
+---
+title: "US College Ranking Analysis"
+author: "Moni Nguyen"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+Let read some data:
+
+```{r}
+df <- read.csv("C:/Users/nguye/Downloads/2022 US College Rankings.csv")
+```
+
+Let take a quick look at the data set:
+
+```{r}
+head(df)
+```
+
+Let find out if the data set have any missing value:
+
+```{r}
+num_missing_college.name <- sum(is.na(df$College.Name))
+print(num_missing_college.name)
+
+num_missing_rank <- sum(is.na(df$Adjusted.Rank))
+print(num_missing_rank)
+
+num_missing_tuition <- sum(is.na(df$Tuition))
+print(num_missing_tuition)
+
+num_missing_enrollment <- sum(is.na(df$Enrollment.Numbers))
+print(num_missing_enrollment)
+```
+
+Hence, there are no missing values.
+
+Here is the summary of the data:
+
+```{r}
+summary(df)
+```
+
+The top 5 highest ranked college and the top 5 lowest ranked:
+```{r}
+asc_ranked <- head(df[order(df$Adjusted.Rank),],5)
+print(asc_ranked)
+
+desc_ranked <- head(df[order(-df$Adjusted.Rank),],5)
+print(desc_ranked)
+```
+
+
+The college with the highest, median and lowest tuition are:
+
+```{r}
+highest_tuition <- df$College.Name[which.max(df$Tuition)]
+college_median <- df$College.Name[df$Tuition == median(df$Tuition)]
+lowest_tuition <- df$College.Name[which.min(df$Tuition)]
+
+print(highest_tuition)
+print(college_median)
+print(lowest_tuition)
+```
+
+The college with the highest, median and lowest enrollment are:
+```{r}
+highest_enrollment <- df$College.Name[which.max(df$Enrollment.Numbers)]
+median_enrollment <- df$College.Name[df$Enrollment.Numbers == median(df$Enrollment.Numbers)]
+lowest_enrollment <- df$College.Name[which.min(df$Enrollment.Numbers)]
+
+print(highest_enrollment)
+print(median_enrollment)
+print(lowest_enrollment)
+```
+
+The correlation between tuition and enrollment:
+
+```{r}
+correlation <- cor(df$Tuition,df$Enrollment.Numbers)
+print(correlation)
+```
+Interpreting the correlation coefficient:
+
+The negative sign indicates an inverse relationship, meaning that as tuition increases, enrollment tends to decrease, and vice versa.
+
+Conclusions:
+
+Colleges with higher tuition fees tend to have lower enrollment numbers.As tuition increases, the demand for enrollment may decrease, possibly due to affordability concerns.However, it's important to note that correlation does not imply causation. Other factors not considered in the analysis could influence enrollment numbers.
+
+Let install the ggplot2 for visualization:
+
+```{r}
+library(ggplot2)
+```
+
+Let create a scatter plot for the correlation between tuition and enrollment:
+
+```{r}
+plot(df$Tuition, df$Enrollment.Numbers,xlab = "Tuition",ylab = "Enrollment",main = "Tuition vs. Enrollment")
+```
+
+By observing the scatter plot, we can draw the conclusion that tuition is not an ultimate factor that influence enrollment number but it can be other factors such as reputation, scholarship and location.
+
