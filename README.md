@@ -20,3 +20,6 @@ Visualize the data: Create visualizations such as scatter plot to visually repre
 Identify top-ranked colleges: Investigate the ranking variable and identify the top-ranked colleges based on their ranking scores. 
 Generate insights: Draw meaningful conclusions and insights from the analysis.
 Document the process: Keep track of the data exploration, analysis steps, and findings in a well-documented R markdown file.
+
+**DATA ANALYSIS**
+Here is the link for the R Markdown file of this project : https://monitv2303.github.io/Data_Exploration_With_R/
