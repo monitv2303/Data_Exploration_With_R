@@ -1,4 +1,4 @@
-# uscollege_dataanalysis
+# Data Exploration With R
 **DESCRIPTION**
 
 This project utilize R to explore, analyze and visualize the "US College Rankings and Tuition Costs" data set which provides information on various colleges, including their rankings, tuition fees, and enrollment. The project will focus on understanding the relationship between tuition and enrollment numbers and examining the overall trends and insights within the dataset.
